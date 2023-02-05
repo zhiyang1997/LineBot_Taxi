@@ -1,0 +1,5 @@
+
+Django==3.2.16
+liffpy
+line-bot-sdk
+
