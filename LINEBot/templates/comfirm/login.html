@@ -1,0 +1,92 @@
+<form id="driver" method="post">
+  {% csrf_token %}
+  <p>
+    <label for="user_id">user_id</label>
+    <input id="user_id" type="text" name="user_id" maxlength="20" required />
+  </p>
+  <p>
+    <label for="driver_id">driver_id</label>
+    <input
+      id="driver_id"
+      type="text"
+      name="driver_id"
+      maxlength="20"
+      required
+    />
+  </p>
+  <p>
+    <label for="phone_number">電話號碼</label>
+    <input
+      id="phone_number"
+      type="text"
+      name="phone_number"
+      maxlength="20"
+      required
+    />
+  </p>
+  <button id="btn" type="submit">送出</button>
+</form>
+<div id="status"></div>
+<script
+  charset="utf-8"
+  src="https://static.line-scdn.net/liff/edge/2/sdk.js"
+></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  liff
+    .init({
+      liffId: "1660665209-QGNMM4RD",
+    })
+    .then(async () => {
+      if (liff.isLoggedIn()) {
+        let user = liff.getDecodedIDToken();
+        let lineId = document.getElementById("user_id");
+        liff
+          .getProfile()
+          .then(function (profile) {
+            lineId.value = profile.userId;
+          })
+          .catch(function (error) {});
+
+        //$("form").on("submit", comfirm());
+      } else {
+        liff.login();
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+</script>
+
+<script>
+  /*
+
+  //演算法
+  //1. 取得事件
+  $(document).ready(function () {
+    $.ajaxSetup({
+      data: { csrfmiddlewaretoken: "{{ csrf_token }}" },
+    });
+    $.ajax({
+      url: "login/",
+      method: "POST",
+      data: $("form").serialize(), // 將表單資料用打包起來送出去
+      dataType: "json", //資料格式\
+      beforeSend: function () {
+        $("#status").html(
+          '<div class="spinner-border" role="status"><span class="visually-hidden">Loading...</span></div role="status"><div>驗證中... 請稍後</div>'
+        );
+      },
+      success: function (response) {
+        //3. 執行delete function
+        let status = response;
+        $("#status").html(status);
+      },
+      error: function () {
+        $("#status").text("驗證錯誤，請重新驗證");
+      },
+    });
+  });
+  */
+</script>
