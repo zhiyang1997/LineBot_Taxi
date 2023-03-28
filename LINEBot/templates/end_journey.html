@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>結束行程</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <style>
+        .slidecontainer {
+            width: 100%;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 60px;
+            border-radius: 30px;
+            background: #00B050;
+            outline: none;
+            opacity: 1;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 60px;
+            height: 45px;
+            border-radius: 25px;
+            background: white;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 60px;
+            height: 45px;
+            border-radius: 25px;
+            background: white;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <h1 class="font-weight-bolder mb-5"><strong>行程已結束</strong></h1>
+            <div style="background-color: lightgrey" class="text-center p-3">
+                <h5>行車距離：25 km</h5>
+                <h5>行車時間：34 min</h5>
+                <h5>費率：$578</h5>
+            </div>
+
+        </div>
+    </div>
+    <br>
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <div class="slidecontainer">
+                <input type="range" min="1" max="100" value="3" class="slider" id="myRange">
+            </div>
+            <h4 class="mt-2">右滑確認結單</h4>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

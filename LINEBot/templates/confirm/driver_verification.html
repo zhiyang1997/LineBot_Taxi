@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>司機驗證</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header bg-info lead">司機驗證</div>
+          <div class="card-body">
+            <form>
+              <div class="form-group">
+                <label for="InputDriverId">司機ID</label>
+                <input type="DriverId" class="form-control" id="DriverId" placeholder="【輸入範例：D0001】">
+                <div id="DriverIdHelp" class="text-muted">首字請大寫，請勿輸入空格或標點符號。</div>
+              </div>
+              <fieldset disabled>
+                <div class="form-group">
+                  <label for="InputDriverLineiD">Line ID</label>
+                  <input type="text" class="form-control" id="disabledInput" placeholder="Line ID">
+                </div>
+              </fieldset>
+              <div class="form-group">
+                <label for="PhoneNumber">電話號碼</label>
+                <input type="password" class="form-control" id="PhoneNumber" placeholder="【輸入範例：0901234567】">
+                <div id="DriverIdHelp" class="text-muted">請勿輸入空格或標點符號。</div>
+              </div>
+              <button type="submit" class="btn btn-primary">驗證</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
