@@ -4,10 +4,11 @@ from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseForbid
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 
-#LINEbot Moudle
+#LINEbot Module
 from linebot import LineBotApi, WebhookParser
 from linebot.exceptions import InvalidSignatureError, LineBotApiError
 from linebot.models import *
+
 #DriverServer
 from .DriverServer import *
 from .passengerServer import *
@@ -34,7 +35,7 @@ def driverlogin(request):
     context = {
         'form':form
     }
-    return render(request, 'comfirm/login.html', context)
+    return render(request, 'confirm/login.html', context)
 
 
 @csrf_exempt
